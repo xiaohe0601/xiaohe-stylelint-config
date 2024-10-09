@@ -1,7 +1,7 @@
 {
   "name": "xiaohe-stylelint-config",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "packageManager": "pnpm@9.12.1",
   "description": "🤚 Stylelint config preset for xiaohe",
