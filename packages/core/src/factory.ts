@@ -2,7 +2,7 @@ import { castArray, isEmpty, merge, omit } from "lodash-es";
 import type { Config } from "stylelint";
 import { SCSS_PACKAGES, UNIAPP_PACKAGE, VUE_PACKAGES } from "./constants";
 import { isPkgExists } from "./helpers";
-import type { ConfigExtends, ConfigOptions, ConfigPlugins, ConfigPresets, ConfigRules } from "./types";
+import type { ConfigExtends, ConfigOptions, ConfigOverrides, ConfigPlugins, ConfigPresets, ConfigRules } from "./types";
 
 function buildExtends(options: ConfigOptions): ConfigExtends {
   if (!isEmpty(options.overrideExtends)) {
@@ -123,6 +123,26 @@ function buildRules(options: ConfigOptions): ConfigRules {
   return rules;
 }
 
+export function buildOverrides(options: ConfigOptions): ConfigOverrides {
+  if (!isEmpty(options.overrideOverrides)) {
+    return options.overrideOverrides;
+  }
+
+  const overrides: ConfigOverrides = [{
+    files: ["*.html", "*.vue"],
+    customSyntax: "postcss-html"
+  }, {
+    files: ["*.scss"],
+    customSyntax: "postcss-scss"
+  }];
+
+  if (!isEmpty(options.overrides)) {
+    overrides.push(...castArray(options.overrides));
+  }
+
+  return overrides;
+}
+
 export function defineConfig(options: ConfigOptions = {}): Config {
   const presets: ConfigPresets = merge({
     scss: isPkgExists(SCSS_PACKAGES),
@@ -142,10 +162,12 @@ export function defineConfig(options: ConfigOptions = {}): Config {
     extends: buildExtends(finalOptions),
     plugins: buildPlugins(finalOptions),
     rules: buildRules(finalOptions),
+    overrides: buildOverrides(finalOptions),
     ...omit(options, [
       "extends",
       "plugins",
-      "rules"
+      "rules",
+      "overrides"
     ])
   };
 }

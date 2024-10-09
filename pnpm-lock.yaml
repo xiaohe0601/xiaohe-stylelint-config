@@ -59,6 +59,12 @@ importers:
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
+      postcss-html:
+        specifier: ^1.7.0
+        version: 1.7.0
+      postcss-scss:
+        specifier: ^4.0.9
+        version: 4.0.9(postcss@8.4.47)
       stylelint-config-html:
         specifier: ^1.1.0
         version: 1.1.0(postcss-html@1.7.0)(stylelint@16.9.0(typescript@5.5.4))

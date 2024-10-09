@@ -14,6 +14,8 @@ export interface ConfigRules {
   [key: string]: ConfigRule;
 }
 
+export type ConfigOverrides = Config["overrides"];
+
 export interface ConfigPresets {
   scss?: boolean;
   vue?: boolean;
@@ -24,4 +26,5 @@ export interface ConfigOptions extends Config {
   presets?: ConfigPresets;
   overrideExtends?: Config["extends"];
   overridePlugins?: Config["plugins"];
+  overrideOverrides?: Config["overrides"];
 }
