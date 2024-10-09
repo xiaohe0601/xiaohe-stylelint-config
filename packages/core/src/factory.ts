@@ -112,9 +112,7 @@ function buildRules(options: ConfigOptions): ConfigRules {
 
   if (enableUniApp) {
     merge(rules, {
-      "selector-type-no-unknown": [true, {
-        ignoreTypes: ["page", "rich-text", "scroll-view"]
-      }]
+      "selector-type-no-unknown": null
     });
   }
 
