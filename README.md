@@ -39,7 +39,7 @@ npm install -D stylelint @xiaohe01/stylelint-config
 Create `stylelint.config.js` in your project root
 
 ```js
-import defineConfig from "@xiaohe01/stylelint-config";
+import { defineConfig } from "@xiaohe01/stylelint-config";
 
 export default defineConfig();
 ```
