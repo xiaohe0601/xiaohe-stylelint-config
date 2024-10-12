@@ -81,14 +81,15 @@ function buildRules(options: ConfigOptions): ConfigRules {
   const rules: ConfigRules = {
     ...disables,
     "color-hex-length": ["long", {
-      message: "Hexadecimal colors need to use the long format style (#ffffff)"
+      message: "Hex color value should be used the long format style (#ffffff). (color-hex-length)"
     }],
     "length-zero-no-unit": [true, {
       ignoreFunctions: ["/^--/", "var", "calc"]
     }],
     "alpha-value-notation": "number",
     "selector-class-pattern": ["^([#a-z][$#{}a-z0-9]*)((-{1,2}|_{2})[$#{}a-z0-9]+)*$", {
-      message: "Class naming should follow the BEM style (block-element[__element][--modifier])"
+      message:
+        "Class naming should follow the BEM style (block-element[__element][--modifier]). (selector-class-pattern)"
     }],
     "color-function-notation": "legacy",
     "declaration-block-no-redundant-longhand-properties": [true, {
