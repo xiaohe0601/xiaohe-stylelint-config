@@ -49,8 +49,8 @@ Add script for `package.json`, for example
 ```json
 {
   "scripts": {
-    "stylelint": "stylelint **/*.{css,scss,vue,html}",
-    "stylelint:fix": "stylelint **/*.{css,scss,vue,html} --fix"
+    "stylelint": "stylelint **/*.{css,scss,html,vue}",
+    "stylelint:fix": "stylelint **/*.{css,scss,html,vue} --fix"
   }
 }
 ```
