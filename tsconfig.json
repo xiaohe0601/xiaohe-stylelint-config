@@ -1,5 +1,5 @@
 {
-  "extends": "@xiaohe01/tsconfig/lib",
+  "extends": "@xiaohe01/tsconfig/tsconfig.lib.json",
   "exclude": [
     "**/node_modules/**",
     "**/dist/**"
