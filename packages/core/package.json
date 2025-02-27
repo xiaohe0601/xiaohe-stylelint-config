@@ -41,7 +41,7 @@
     "build": "unbuild"
   },
   "dependencies": {
-    "local-pkg": "^1.0.0",
+    "local-pkg": "^1.1.0",
     "lodash-es": "^4.17.21",
     "postcss-html": "^1.8.0",
     "postcss-scss": "^4.0.9",
