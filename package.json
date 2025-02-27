@@ -9,7 +9,7 @@
     "prepare": "simple-git-hooks",
     "build": "nr -r --filter=./packages/* build",
     "release": "bumpp -r",
-    "lint": "eslint --cache .",
+    "lint": "eslint --cache",
     "lint:fix": "nr lint --fix",
     "lint:type": "tsc --noEmit",
     "test": "vitest",
