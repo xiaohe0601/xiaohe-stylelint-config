@@ -60,7 +60,7 @@ For more information, please refer to [stylelint](https://stylelint.io).
 ### 🐶 Discussion & Communication
 
 - ❓：For questions or bug feedback, you can submit an [issues](https://github.com/xiaohe0601/xiaohe-stylelint-config/issues)
-  and PRs are welcome~
+  and PR are welcome
 - 📫：[xiaohe0601@outlook.com](mailto:xiaohe0601@outlook.com)
 - 🐧：Not yet available
 
@@ -68,28 +68,15 @@ For more information, please refer to [stylelint](https://stylelint.io).
 
 - MIT [LICENSE](./LICENSE)
 
-<!-- Badges -->
-
 [github-stars-src]: https://img.shields.io/github/stars/xiaohe0601/xiaohe-stylelint-config?style=flat&colorA=080f12&colorB=1fa669&logo=GitHub
-
 [github-stars-href]: https://github.com/xiaohe0601/xiaohe-stylelint-config
-
 [npm-version-src]: https://img.shields.io/npm/v/@xiaohe01/stylelint-config?style=flat&colorA=080f12&colorB=1fa669
-
 [npm-version-href]: https://npmjs.com/package/@xiaohe01/stylelint-config
-
 [npm-downloads-src]: https://img.shields.io/npm/dm/@xiaohe01/stylelint-config?style=flat&colorA=080f12&colorB=1fa669
-
 [npm-downloads-href]: https://npmjs.com/package/@xiaohe01/stylelint-config
-
 [bundle-src]: https://img.shields.io/bundlephobia/minzip/@xiaohe01/stylelint-config?style=flat&colorA=080f12&colorB=1fa669&label=minzip
-
 [bundle-href]: https://bundlephobia.com/result?p=@xiaohe01/stylelint-config
-
 [jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669
-
 [jsdocs-href]: https://www.jsdocs.io/package/@xiaohe01/stylelint-config
-
 [license-src]: https://img.shields.io/github/license/xiaohe0601/xiaohe-stylelint-config.svg?style=flat&colorA=080f12&colorB=1fa669
-
 [license-href]: https://github.com/xiaohe0601/xiaohe-stylelint-config/blob/main/LICENSE
