@@ -69,6 +69,7 @@ function buildRules(options: ConfigOptions): ConfigRules {
     "font-family-name-quotes": null,
     "no-descending-specificity": null,
     "custom-property-empty-line-before": null,
+    "declaration-property-value-no-unknown": null,
     "font-family-no-missing-generic-family-keyword": null
   };
 
