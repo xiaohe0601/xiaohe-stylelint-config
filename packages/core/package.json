@@ -41,20 +41,20 @@
     "build": "unbuild"
   },
   "dependencies": {
-    "local-pkg": "^1.1.0",
-    "lodash-es": "^4.17.21",
-    "postcss-html": "^1.8.0",
-    "postcss-scss": "^4.0.9",
-    "stylelint-config-html": "^1.1.0",
-    "stylelint-config-recess-order": "^6.0.0",
-    "stylelint-config-recommended": "^15.0.0",
-    "stylelint-config-recommended-vue": "^1.6.0",
-    "stylelint-config-standard": "^37.0.0",
-    "stylelint-config-standard-scss": "^14.0.0",
-    "stylelint-order": "^6.0.4"
+    "local-pkg": "catalog:",
+    "lodash-es": "catalog:",
+    "postcss-html": "catalog:",
+    "postcss-scss": "catalog:",
+    "stylelint-config-html": "catalog:",
+    "stylelint-config-recess-order": "catalog:",
+    "stylelint-config-recommended": "catalog:",
+    "stylelint-config-recommended-vue": "catalog:",
+    "stylelint-config-standard": "catalog:",
+    "stylelint-config-standard-scss": "catalog:",
+    "stylelint-order": "catalog:"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.12",
-    "stylelint": "^16.15.0"
+    "@types/lodash-es": "catalog:",
+    "stylelint": "catalog:"
   }
 }
