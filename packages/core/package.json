@@ -45,13 +45,13 @@
     "lodash-es": "catalog:",
     "postcss-html": "catalog:",
     "postcss-scss": "catalog:",
-    "stylelint-config-html": "catalog:",
     "stylelint-config-recess-order": "catalog:",
     "stylelint-config-recommended": "catalog:",
     "stylelint-config-recommended-vue": "catalog:",
     "stylelint-config-standard": "catalog:",
     "stylelint-config-standard-scss": "catalog:",
-    "stylelint-order": "catalog:"
+    "stylelint-order": "catalog:",
+    "stylelint-scss": "catalog:"
   },
   "devDependencies": {
     "@types/lodash-es": "catalog:",

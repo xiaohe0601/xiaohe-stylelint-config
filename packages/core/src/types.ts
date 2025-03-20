@@ -1,30 +1,19 @@
-import type { Config, ConfigRuleSettings, Plugin } from "stylelint";
+import type { Config } from "stylelint";
 
 export type Arrayable<T> = T | T[];
 
-export type ConfigExtend = string;
-export type ConfigExtends = ConfigExtend[];
+export type ConfigOverride = Omit<Config, "overrides"> & {
+  files: string | string[];
+  name?: string;
+};
 
-export type ConfigPlugin = string | Plugin;
-export type ConfigPlugins = ConfigPlugin[];
+export type UserConfigOverride = Omit<ConfigOverride, "files">;
 
-export type ConfigRule = ConfigRuleSettings<any, object>;
-
-export interface ConfigRules {
-  [key: string]: ConfigRule;
-}
-
-export type ConfigOverrides = Config["overrides"];
-
-export interface ConfigPresets {
-  scss?: boolean;
-  vue?: boolean;
-  uniapp?: boolean;
-}
-
-export interface ConfigOptions extends Config {
-  presets?: ConfigPresets;
-  overrideExtends?: Config["extends"];
-  overridePlugins?: Config["plugins"];
-  overrideOverrides?: Config["overrides"];
+export interface UserConfig {
+  common?: UserConfigOverride;
+  css?: UserConfigOverride;
+  html?: UserConfigOverride;
+  scss?: boolean | UserConfigOverride;
+  vue?: boolean | UserConfigOverride;
+  overrides?: ConfigOverride[];
 }

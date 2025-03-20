@@ -10,5 +10,3 @@ export const VUE_PACKAGES = [
   "vitepress",
   "@slidev/cli"
 ];
-
-export const UNIAPP_PACKAGE = "@dcloudio/uni-app";
