@@ -1,17 +1,16 @@
-import { omit } from "lodash-es";
 import { GLOB_VUE } from "../globs";
-import type { ConfigOverride, UserConfigOverride } from "../types";
+import type { ConfigOverride, OptionsOverrides } from "../types";
 
-export function vue(config: UserConfigOverride = {}): ConfigOverride {
-  return {
-    files: GLOB_VUE,
-    customSyntax: "postcss-html",
-    extends: [
-      "stylelint-config-recommended-vue"
-    ],
-    rules: {
-      ...config.rules
-    },
-    ...omit(config, ["rules"])
-  };
+export function vue(options: OptionsOverrides = {}): ConfigOverride[] {
+  return [
+    {
+      files: GLOB_VUE,
+      extends: [
+        "stylelint-config-recommended-vue"
+      ],
+      rules: {
+        ...options.overrides
+      }
+    }
+  ];
 }

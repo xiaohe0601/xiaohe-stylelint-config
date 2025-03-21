@@ -1,4 +1,4 @@
-export * from "./common";
+export * from "./core";
 export * from "./css";
 export * from "./html";
 export * from "./scss";

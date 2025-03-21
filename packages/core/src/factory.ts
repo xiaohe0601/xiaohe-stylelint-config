@@ -1,43 +1,64 @@
 import type { Config } from "stylelint";
-import { common, css, html, scss, vue } from "./configs";
+import { core, css, html, scss, vue } from "./configs";
 import { SCSS_PACKAGES, VUE_PACKAGES } from "./constants";
 import { isPkgExists } from "./helpers";
-import type { UserConfig, UserConfigOverride } from "./types";
+import type { ConfigOverride, OptionsConfig } from "./types";
 
-function getUserOverride(config?: boolean | UserConfigOverride): UserConfigOverride {
-  return typeof config === "boolean" ? {} : config || {};
-}
-
-export function defineConfig(config: UserConfig = {}): Config {
+export function defineConfig(
+  options: OptionsConfig & Omit<Config, "overrides"> = {},
+  ...userOverrides: ConfigOverride[]
+): Config {
   const {
+    css: enableCss = true,
+    html: enableHtml = true,
     scss: enableScss = isPkgExists(SCSS_PACKAGES),
     vue: enableVue = isPkgExists(VUE_PACKAGES)
-  } = config;
+  } = options;
 
   const overrides = [
-    common(config.common),
-    css(config.css),
-    html(config.html)
+    ...core(normalizeOptions(options.core))
   ];
+
+  if (enableCss) {
+    overrides.push(
+      ...css(normalizeOptions(options.css))
+    );
+  }
+
+  if (enableHtml) {
+    overrides.push(
+      ...html(normalizeOptions(options.html))
+    );
+  }
 
   if (enableScss) {
     overrides.push(
-      scss(getUserOverride(config.scss))
+      ...scss(normalizeOptions(options.scss))
     );
   }
 
   if (enableVue) {
     overrides.push(
-      vue(getUserOverride(config.vue))
+      ...vue(normalizeOptions(options.vue))
     );
   }
 
-  if (config.overrides) {
-    overrides.push(...config.overrides);
-  }
+  overrides.push(...userOverrides);
 
   return {
+    defaultSeverity: "error",
+    allowEmptyInput: true,
+    extends: [
+      "stylelint-config-html"
+    ],
     overrides,
-    rules: {}
+    rules: {},
+    ...options
   };
+}
+
+function normalizeOptions<T extends object>(options?: boolean | T): T {
+  return typeof options === "boolean"
+    ? {} as T
+    : options || {} as T;
 }

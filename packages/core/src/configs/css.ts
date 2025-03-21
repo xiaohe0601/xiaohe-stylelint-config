@@ -1,13 +1,13 @@
-import { omit } from "lodash-es";
 import { GLOB_CSS } from "../globs";
-import type { ConfigOverride, UserConfigOverride } from "../types";
+import type { ConfigOverride, OptionsOverrides } from "../types";
 
-export function css(config: UserConfigOverride = {}): ConfigOverride {
-  return {
-    files: GLOB_CSS,
-    rules: {
-      ...config.rules
-    },
-    ...omit(config, ["rules"])
-  };
+export function css(options: OptionsOverrides = {}): ConfigOverride[] {
+  return [
+    {
+      files: GLOB_CSS,
+      rules: {
+        ...options.overrides
+      }
+    }
+  ];
 }

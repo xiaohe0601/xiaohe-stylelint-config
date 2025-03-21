@@ -8,7 +8,6 @@ export default defineBuildConfig({
   declaration: true,
   externals: [
     "stylelint",
-    "lodash-es",
     "local-pkg"
   ],
   rollup: {

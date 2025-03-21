@@ -1,20 +1,16 @@
-import { omit } from "lodash-es";
 import { GLOB_SCSS } from "../globs";
-import type { ConfigOverride, UserConfigOverride } from "../types";
+import type { ConfigOverride, OptionsOverrides } from "../types";
 
-export function scss(config: UserConfigOverride = {}): ConfigOverride {
-  return {
-    files: GLOB_SCSS,
-    customSyntax: "postcss-scss",
-    extends: [
-      "stylelint-config-standard-scss"
-    ],
-    plugins: [
-      "stylelint-scss"
-    ],
-    rules: {
-      ...config.rules
-    },
-    ...omit(config, ["rules"])
-  };
+export function scss(options: OptionsOverrides = {}): ConfigOverride[] {
+  return [
+    {
+      files: GLOB_SCSS,
+      extends: [
+        "stylelint-config-recommended-scss"
+      ],
+      rules: {
+        ...options.overrides
+      }
+    }
+  ];
 }

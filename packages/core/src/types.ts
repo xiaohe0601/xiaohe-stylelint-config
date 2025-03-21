@@ -7,13 +7,37 @@ export type ConfigOverride = Omit<Config, "overrides"> & {
   name?: string;
 };
 
-export type UserConfigOverride = Omit<ConfigOverride, "files">;
+export interface OptionsOverrides {
+  overrides?: Config["rules"];
+}
 
-export interface UserConfig {
-  common?: UserConfigOverride;
-  css?: UserConfigOverride;
-  html?: UserConfigOverride;
-  scss?: boolean | UserConfigOverride;
-  vue?: boolean | UserConfigOverride;
-  overrides?: ConfigOverride[];
+export interface OptionsConfig {
+  /**
+   * Core rules. Can't be disabled.
+   */
+  core?: OptionsOverrides;
+  /**
+   * Enable CSS support.
+   *
+   * @default true
+   */
+  css?: boolean | OptionsOverrides;
+  /**
+   * Enable HTML support.
+   *
+   * @default true
+   */
+  html?: boolean | OptionsOverrides;
+  /**
+   * Enable Scss support.
+   *
+   * @default auto-detect based on the dependencies
+   */
+  scss?: boolean | OptionsOverrides;
+  /**
+   * Enable Vue support.
+   *
+   * @default auto-detect based on the dependencies
+   */
+  vue?: boolean | OptionsOverrides;
 }
