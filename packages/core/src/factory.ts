@@ -48,9 +48,6 @@ export function defineConfig(
   return {
     defaultSeverity: "error",
     allowEmptyInput: true,
-    extends: [
-      "stylelint-config-html"
-    ],
     overrides,
     rules: {},
     ...options

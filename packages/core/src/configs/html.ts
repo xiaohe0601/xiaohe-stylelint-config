@@ -5,6 +5,9 @@ export function html(options: OptionsOverrides = {}): ConfigOverride[] {
   return [
     {
       files: GLOB_HTML,
+      extends: [
+        "stylelint-config-html/html"
+      ],
       rules: {
         ...options.overrides
       }
