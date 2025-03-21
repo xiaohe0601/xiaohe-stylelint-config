@@ -26,6 +26,9 @@ yarn add --dev stylelint @xiaohe01/stylelint-config
 npm install -D stylelint @xiaohe01/stylelint-config
 ```
 
+> [!WARNING]
+> Stylelint `16.0.0+` is now required
+
 ### 🛹 Usage
 
 Create `stylelint.config.mjs` in your project root
