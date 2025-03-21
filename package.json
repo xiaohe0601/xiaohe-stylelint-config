@@ -7,11 +7,14 @@
   "description": "🤚 Stylelint config preset for xiaohe",
   "scripts": {
     "prepare": "simple-git-hooks",
+    "postinstall": "nr build",
     "build": "nr -r --filter=./packages/* build",
     "release": "bumpp -r",
     "lint": "eslint --cache",
     "lint:fix": "nr lint --fix",
     "lint:type": "tsc --noEmit",
+    "stylelint": "stylelint **/*.{css,scss,html,vue} --cache",
+    "stylelint:fix": "nr stylelint --fix",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage"
