@@ -1,6 +1,6 @@
 <div align="center">
   <h1>xiaohe-stylelint-config</h1>
-  <span>🤚 Stylelint config preset for xiaohe</span>
+  <span>🤚 Stylelint config preset for xiaohe (inspired by antfu/eslint-config)</span>
 </div>
 
 <br>
