@@ -27,7 +27,7 @@ npm install -D stylelint @xiaohe01/stylelint-config
 ```
 
 > [!WARNING]
-> Stylelint `16.0.0+` is now required
+> Stylelint `16.13.0+` is now required
 
 ### 🛹 Usage
 

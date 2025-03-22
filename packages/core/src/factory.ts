@@ -2,7 +2,7 @@ import type { Config } from "stylelint";
 import { core, css, html, scss, vue } from "./configs";
 import { SCSS_PACKAGES, VUE_PACKAGES } from "./constants";
 import { isPkgExists } from "./helpers";
-import type { ConfigOverride, OptionsConfig } from "./types";
+import type { ConfigOverride, ConfigRules, OptionsConfig, OptionsOverrides } from "./types";
 
 export function defineConfig(
   options: OptionsConfig & Omit<Config, "overrides"> = {},
@@ -16,30 +16,41 @@ export function defineConfig(
   } = options;
 
   const overrides = [
-    ...core(normalizeOptions(options.core))
+    ...core({
+      overrides: getOverrides(options.core)
+    })
   ];
 
   if (enableCss) {
     overrides.push(
-      ...css(normalizeOptions(options.css))
+      ...css({
+        overrides: getOverrides(options.css)
+      })
     );
   }
 
   if (enableHtml) {
     overrides.push(
-      ...html(normalizeOptions(options.html))
+      ...html({
+        overrides: getOverrides(options.html)
+      })
     );
   }
 
   if (enableScss) {
     overrides.push(
-      ...scss(normalizeOptions(options.scss))
+      ...scss({
+        overrides: getOverrides(options.scss)
+      })
     );
   }
 
   if (enableVue) {
     overrides.push(
-      ...vue(normalizeOptions(options.vue))
+      ...vue({
+        overrides: getOverrides(options.vue),
+        scss: !!enableScss
+      })
     );
   }
 
@@ -54,8 +65,10 @@ export function defineConfig(
   };
 }
 
-function normalizeOptions<T extends object>(options?: boolean | T): T {
-  return typeof options === "boolean"
-    ? {} as T
-    : options || {} as T;
+function getOverrides(options?: boolean | OptionsOverrides): ConfigRules {
+  if (options == null || typeof options === "boolean") {
+    return {};
+  }
+
+  return options.overrides || {};
 }

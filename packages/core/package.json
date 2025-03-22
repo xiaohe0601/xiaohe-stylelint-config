@@ -40,15 +40,14 @@
   "scripts": {
     "build": "unbuild"
   },
+  "peerDependencies": {
+    "stylelint": ">=16.13.0"
+  },
   "dependencies": {
     "local-pkg": "catalog:",
     "postcss-html": "catalog:",
     "postcss-scss": "catalog:",
-    "stylelint-config-html": "catalog:",
     "stylelint-config-recess-order": "catalog:",
-    "stylelint-config-recommended": "catalog:",
-    "stylelint-config-recommended-scss": "catalog:",
-    "stylelint-config-recommended-vue": "catalog:",
     "stylelint-order": "catalog:",
     "stylelint-scss": "catalog:"
   },
