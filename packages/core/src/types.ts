@@ -13,7 +13,7 @@ export interface OptionsOverrides {
   overrides?: ConfigRules;
 }
 
-export interface OptionsVue extends OptionsOverrides {
+export interface InternalVueOptions extends OptionsOverrides {
   /**
    * Enable Scss support.
    *
@@ -50,5 +50,5 @@ export interface OptionsConfig {
    *
    * @default auto-detect based on the dependencies
    */
-  vue?: boolean | OptionsVue;
+  vue?: boolean | OptionsOverrides;
 }

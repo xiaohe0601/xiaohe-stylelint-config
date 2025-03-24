@@ -1,7 +1,7 @@
 import { GLOB_VUE } from "../globs";
-import type { ConfigOverride, OptionsVue } from "../types";
+import type { ConfigOverride, InternalVueOptions } from "../types";
 
-export function vue(options: OptionsVue = {}): ConfigOverride[] {
+export function vue(options: InternalVueOptions = {}): ConfigOverride[] {
   const {
     scss = false
   } = options;
