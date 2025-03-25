@@ -16,14 +16,6 @@ export function vue(options: InternalVueOptions = {}): ConfigOverride[] {
       name: "xiaohe/vue/rules",
       files: GLOB_VUE,
       rules: {
-        "declaration-property-value-no-unknown": [
-          true,
-          {
-            ignoreProperties: {
-              "/.*/": "/v-bind\\(.+\\)/"
-            }
-          }
-        ],
         "function-no-unknown": [
           true,
           {
