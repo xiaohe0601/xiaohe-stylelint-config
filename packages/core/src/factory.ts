@@ -1,5 +1,5 @@
 import type { Config } from "stylelint";
-import { core, css, html, scss, vue } from "./configs";
+import { core, css, html, scss, setup, vue } from "./configs";
 import { SCSS_PACKAGES, VUE_PACKAGES } from "./constants";
 import { isPkgExists } from "./helpers";
 import type { ConfigOverride, ConfigRules, OptionsConfig, OptionsOverrides } from "./types";
@@ -9,22 +9,31 @@ export function defineConfig(
   ...userOverrides: ConfigOverride[]
 ): Config {
   const {
-    css: enableCss = true,
-    html: enableHtml = true,
     scss: enableScss = isPkgExists(SCSS_PACKAGES),
+    html: enableHtml = true,
     vue: enableVue = isPkgExists(VUE_PACKAGES)
   } = options;
 
   const overrides = [
+    ...setup({
+      scss: !!enableScss,
+      html: !!enableHtml,
+      vue: !!enableVue
+    }),
     ...core({
-      overrides: getOverrides(options.core)
+      overrides: getOverrides(options.core),
+      vue: !!enableVue
+    }),
+    ...css({
+      overrides: getOverrides(options.css)
     })
   ];
 
-  if (enableCss) {
+  if (enableScss) {
     overrides.push(
-      ...css({
-        overrides: getOverrides(options.css)
+      ...scss({
+        overrides: getOverrides(options.scss),
+        vue: !!enableVue
       })
     );
   }
@@ -37,19 +46,10 @@ export function defineConfig(
     );
   }
 
-  if (enableScss) {
-    overrides.push(
-      ...scss({
-        overrides: getOverrides(options.scss)
-      })
-    );
-  }
-
   if (enableVue) {
     overrides.push(
       ...vue({
-        overrides: getOverrides(options.vue),
-        scss: !!enableScss
+        overrides: getOverrides(options.vue)
       })
     );
   }

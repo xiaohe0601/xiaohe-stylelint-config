@@ -1,7 +1,11 @@
 import { GLOB_ALL } from "../globs";
-import type { ConfigOverride, OptionsOverrides } from "../types";
+import type { ConfigOverride, InternalCoreOptions } from "../types";
 
-export function core(options: OptionsOverrides = {}): ConfigOverride[] {
+export function core(options: InternalCoreOptions = {}): ConfigOverride[] {
+  const {
+    vue = false
+  } = options;
+
   return [
     {
       name: "xiaohe/core/rules",
@@ -97,6 +101,31 @@ export function core(options: OptionsOverrides = {}): ConfigOverride[] {
               ]
           }
         ],
+
+        ...vue
+          ? {
+              "selector-pseudo-class-no-unknown": [
+                true,
+                {
+                  ignorePseudoClasses: [
+                    "deep",
+                    "global",
+                    "slotted"
+                  ]
+                }
+              ],
+              "selector-pseudo-element-no-unknown": [
+                true,
+                {
+                  ignorePseudoElements: [
+                    "v-deep",
+                    "v-global",
+                    "v-slotted"
+                  ]
+                }
+              ]
+            }
+          : {},
 
         ...options.overrides
       }

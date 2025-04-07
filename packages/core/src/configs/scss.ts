@@ -1,19 +1,18 @@
-import { GLOB_SCSS } from "../globs";
-import type { ConfigOverride, OptionsOverrides } from "../types";
+import { GLOB_SCSS, GLOB_VUE } from "../globs";
+import type { ConfigOverride, InternalScssOptions } from "../types";
 
-export function scss(options: OptionsOverrides = {}): ConfigOverride[] {
+export function scss(options: InternalScssOptions = {}): ConfigOverride[] {
+  const {
+    vue = false
+  } = options;
+
   return [
     {
-      name: "xiaohe/scss/setup",
-      files: GLOB_SCSS,
-      customSyntax: "postcss-scss",
-      plugins: [
-        "stylelint-scss"
-      ]
-    },
-    {
       name: "xiaohe/scss/rules",
-      files: GLOB_SCSS,
+      files: [
+        ...GLOB_SCSS,
+        ...vue ? GLOB_VUE : []
+      ],
       rules: {
         "annotation-no-unknown": null,
         "at-rule-no-unknown": null,

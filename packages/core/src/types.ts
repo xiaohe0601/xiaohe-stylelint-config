@@ -9,17 +9,47 @@ export type ConfigOverride = Omit<Config, "overrides"> & {
 
 export type ConfigRules = Config["rules"];
 
-export interface OptionsOverrides {
-  overrides?: ConfigRules;
-}
-
-export interface InternalVueOptions extends OptionsOverrides {
+export interface SetupOptions {
   /**
    * Enable Scss support.
    *
    * @default false
    */
   scss?: boolean;
+  /**
+   * Enable HTML support.
+   *
+   * @default false
+   */
+  html?: boolean;
+  /**
+   * Enable Vue support.
+   *
+   * @default false
+   */
+  vue?: boolean;
+}
+
+export interface OptionsOverrides {
+  overrides?: ConfigRules;
+}
+
+export interface InternalCoreOptions extends OptionsOverrides {
+  /**
+   * Enable Vue support.
+   *
+   * @default false
+   */
+  vue?: boolean;
+}
+
+export interface InternalScssOptions extends OptionsOverrides {
+  /**
+   * Enable Vue support.
+   *
+   * @default false
+   */
+  vue?: boolean;
 }
 
 export interface OptionsConfig {
@@ -28,23 +58,21 @@ export interface OptionsConfig {
    */
   core?: OptionsOverrides;
   /**
-   * Enable CSS support.
-   *
-   * @default true
+   * CSS rules.
    */
-  css?: boolean | OptionsOverrides;
-  /**
-   * Enable HTML support.
-   *
-   * @default true
-   */
-  html?: boolean | OptionsOverrides;
+  css?: OptionsOverrides;
   /**
    * Enable Scss support.
    *
    * @default auto-detect based on the dependencies
    */
   scss?: boolean | OptionsOverrides;
+  /**
+   * Enable HTML support.
+   *
+   * @default true
+   */
+  html?: boolean | OptionsOverrides;
   /**
    * Enable Vue support.
    *
