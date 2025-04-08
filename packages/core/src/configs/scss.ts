@@ -3,7 +3,8 @@ import type { ConfigOverride, InternalScssOptions } from "../types";
 
 export function scss(options: InternalScssOptions = {}): ConfigOverride[] {
   const {
-    vue = false
+    vue = false,
+    uniapp = false
   } = options;
 
   return [
@@ -44,6 +45,12 @@ export function scss(options: InternalScssOptions = {}): ConfigOverride[] {
         "scss/operator-no-newline-after": true,
         "scss/operator-no-newline-before": true,
         "scss/operator-no-unspaced": true,
+
+        ...uniapp
+          ? {
+              "scss/load-partial-extension": "always"
+            }
+          : {},
 
         ...options.overrides
       }

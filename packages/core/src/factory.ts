@@ -1,6 +1,6 @@
 import type { Config } from "stylelint";
 import { core, css, html, scss, setup, vue } from "./configs";
-import { SCSS_PACKAGES, VUE_PACKAGES } from "./constants";
+import { SCSS_PACKAGES, UNIAPP_PACKAGES, VUE_PACKAGES } from "./constants";
 import { isPkgExists } from "./helpers";
 import type { ConfigOverride, ConfigRules, OptionsConfig, OptionsOverrides } from "./types";
 
@@ -11,7 +11,8 @@ export function defineConfig(
   const {
     scss: enableScss = isPkgExists(SCSS_PACKAGES),
     html: enableHtml = true,
-    vue: enableVue = isPkgExists(VUE_PACKAGES)
+    vue: enableVue = isPkgExists(VUE_PACKAGES),
+    uniapp: enableUniApp = isPkgExists(UNIAPP_PACKAGES)
   } = options;
 
   const overrides = [
@@ -33,7 +34,8 @@ export function defineConfig(
     overrides.push(
       ...scss({
         overrides: getOverrides(options.scss),
-        vue: !!enableVue
+        vue: !!enableVue,
+        uniapp: enableUniApp
       })
     );
   }

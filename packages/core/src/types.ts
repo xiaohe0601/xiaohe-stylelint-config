@@ -50,6 +50,12 @@ export interface InternalScssOptions extends OptionsOverrides {
    * @default false
    */
   vue?: boolean;
+  /**
+   * Enable uniapp support.
+   *
+   * @default false
+   */
+  uniapp?: boolean;
 }
 
 export interface OptionsConfig {
@@ -79,4 +85,10 @@ export interface OptionsConfig {
    * @default auto-detect based on the dependencies
    */
   vue?: boolean | OptionsOverrides;
+  /**
+   * Enable uniapp support.
+   *
+   * @default auto-detect based on the dependencies
+   */
+  uniapp?: boolean;
 }
