@@ -1,7 +1,7 @@
 {
-  "extends": "@xiaohe01/tsconfig/tsconfig.lib.json",
-  "exclude": [
-    "**/node_modules/**",
-    "**/dist/**"
-  ]
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.test.json" }
+  ],
+  "files": []
 }

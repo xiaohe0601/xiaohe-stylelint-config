@@ -1,0 +1,6 @@
+{
+  "extends": "@xiaohe01/tsconfig/tsconfig.lib.json",
+  "include": [
+    "src/**/*.ts"
+  ]
+}

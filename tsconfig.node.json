@@ -1,0 +1,7 @@
+{
+  "extends": "@xiaohe01/tsconfig/tsconfig.lib.json",
+  "include": [
+    "eslint.config.js",
+    "stylelint.config.js"
+  ]
+}

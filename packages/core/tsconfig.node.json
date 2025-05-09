@@ -1,0 +1,6 @@
+{
+  "extends": "@xiaohe01/tsconfig/tsconfig.lib.json",
+  "include": [
+    "build.config.ts"
+  ]
+}
