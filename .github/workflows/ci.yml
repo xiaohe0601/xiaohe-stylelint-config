@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   pull_request:
     branches:
       - main
@@ -30,11 +29,13 @@ jobs:
       - name: Install
         run: nci
 
-      - name: Lint code
-        run: nr lint
+      - name: Build
+        run: nr build
 
-      - name: Lint type
-        run: nr lint:type
+      - name: Lint
+        run: |
+          nr lint
+          nr lint:type
 
   test:
     runs-on: ${{ matrix.os }}
