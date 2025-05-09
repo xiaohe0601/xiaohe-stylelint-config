@@ -3,7 +3,7 @@
   "type": "module",
   "version": "2.3.1",
   "private": true,
-  "packageManager": "pnpm@10.6.5",
+  "packageManager": "pnpm@10.10.0",
   "description": "🤚 Stylelint config preset for xiaohe",
   "scripts": {
     "prepare": "simple-git-hooks",
