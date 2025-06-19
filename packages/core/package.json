@@ -1,7 +1,7 @@
 {
   "name": "@xiaohe01/stylelint-config",
   "type": "module",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "🤚 Stylelint config preset for xiaohe",
   "author": "xiaohe0601 <xiaohe0601@outlook.com>",
   "license": "MIT",
