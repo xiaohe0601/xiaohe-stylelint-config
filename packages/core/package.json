@@ -18,13 +18,13 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
     "./*": "./*"
   },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
@@ -38,20 +38,21 @@
     "dist"
   ],
   "scripts": {
-    "build": "unbuild"
+    "dev": "tsdown --watch",
+    "build": "tsdown"
   },
   "peerDependencies": {
     "stylelint": ">=16.13.0"
   },
   "dependencies": {
-    "local-pkg": "catalog:",
-    "postcss-html": "catalog:",
-    "postcss-scss": "catalog:",
-    "stylelint-config-recess-order": "catalog:",
-    "stylelint-order": "catalog:",
-    "stylelint-scss": "catalog:"
+    "local-pkg": "catalog:node",
+    "postcss-html": "catalog:style",
+    "postcss-scss": "catalog:style",
+    "stylelint-config-recess-order": "catalog:lint",
+    "stylelint-order": "catalog:lint",
+    "stylelint-scss": "catalog:lint"
   },
   "devDependencies": {
-    "stylelint": "catalog:"
+    "stylelint": "catalog:lint"
   }
 }

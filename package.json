@@ -3,7 +3,7 @@
   "type": "module",
   "version": "2.3.3",
   "private": true,
-  "packageManager": "pnpm@10.12.1",
+  "packageManager": "pnpm@10.12.4",
   "description": "🤚 Stylelint config preset for xiaohe",
   "scripts": {
     "prepare": "simple-git-hooks",
@@ -20,21 +20,22 @@
     "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "@antfu/ni": "catalog:",
-    "@antfu/utils": "catalog:",
-    "@xiaohe01/eslint-config": "catalog:",
+    "@antfu/ni": "catalog:dev",
+    "@antfu/utils": "catalog:dev",
+    "@xiaohe01/eslint-config": "catalog:lint",
     "@xiaohe01/stylelint-config": "workspace:^",
-    "@xiaohe01/tsconfig": "catalog:",
-    "bumpp": "catalog:",
-    "eslint": "catalog:",
-    "esno": "catalog:",
-    "lint-staged": "catalog:",
-    "simple-git-hooks": "catalog:",
-    "stylelint": "catalog:",
-    "typescript": "catalog:",
-    "unbuild": "catalog:",
-    "vite": "catalog:",
-    "vitest": "catalog:"
+    "@xiaohe01/tsconfig": "catalog:dev",
+    "bumpp": "catalog:cli",
+    "eslint": "catalog:lint",
+    "esno": "catalog:script",
+    "lint-staged": "catalog:lint",
+    "pncat": "catalog:cli",
+    "simple-git-hooks": "catalog:lint",
+    "stylelint": "catalog:lint",
+    "tsdown": "catalog:build",
+    "typescript": "catalog:dev",
+    "vite": "catalog:build",
+    "vitest": "catalog:test"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
