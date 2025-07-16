@@ -3,7 +3,7 @@ packages:
 catalogs:
   build:
     tsdown: ^0.12.9
-    vite: ^7.0.2
+    vite: ^7.0.4
   cli:
     bumpp: ^10.2.0
     pncat: ^0.2.6
@@ -13,8 +13,8 @@ catalogs:
     '@xiaohe01/tsconfig': ^2.0.0
     typescript: ~5.7.3
   lint:
-    '@xiaohe01/eslint-config': ^1.9.1
-    eslint: ^9.30.1
+    '@xiaohe01/eslint-config': ^1.10.0
+    eslint: ^9.31.0
     lint-staged: ^16.1.2
     simple-git-hooks: ^2.13.0
     stylelint: ^16.21.1
